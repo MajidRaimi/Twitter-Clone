@@ -6,7 +6,36 @@ version: 0.1.0
 environment:
   sdk: '>=3.1.5 <4.0.0'
 
+dependencies:
+  appwrite: ^11.0.0
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.4.5
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.8
+  fpdart: ^1.1.0
+  fzregex: ^2.0.0
+  google_fonts: ^6.1.0
+  skeletonizer: ^0.8.0
+  flutter_native_splash: ^2.3.5
 
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+  image: 'assets/images/splash_icon.png'
+  color: "#000000"
 
 flutter:
   uses-material-design: true
