@@ -17,7 +17,7 @@ final authAPIProvider = Provider<AuthAPI>((ref) {
 */
 
 abstract class IAuthAPI {
-  FutureEither<User> signup({
+  FutureEither<User> signUp({
     required String email,
     required String password,
   });
@@ -29,7 +29,7 @@ class AuthAPI implements IAuthAPI {
   final Account _account;
 
   @override
-  FutureEither<User> signup({
+  FutureEither<User> signUp({
     required String email,
     required String password,
   }) async {

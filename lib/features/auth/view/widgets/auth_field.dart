@@ -8,15 +8,27 @@ class AuthField extends StatelessWidget {
     required this.controller,
     this.isPassword = false,
     required this.hintText,
+    this.regex,
+    this.errorMessage = 'please check your input',
   });
 
   final TextEditingController controller;
   final bool isPassword;
   final String hintText;
+  final String? regex;
+  final String errorMessage;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter some text';
+        } else if (regex != null && !RegExp(regex!).hasMatch(value)) {
+          return errorMessage;
+        }
+        return null;
+      },
       controller: controller,
       obscureText: isPassword,
       style: const TextStyle(
@@ -33,6 +45,13 @@ class AuthField extends StatelessWidget {
           borderSide: const BorderSide(
             color: Palette.blueColor,
             width: 2,
+          ),
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5.r),
+          borderSide: const BorderSide(
+            color: Palette.greyColor,
+            width: 1,
           ),
         ),
         enabledBorder: OutlineInputBorder(
