@@ -8,7 +8,6 @@ import 'package:twitter_clone/features/auth/controller/auth_controller.dart';
 import 'package:twitter_clone/features/auth/view/widgets/widgets.dart';
 import 'package:twitter_clone/theme/theme.dart';
 
-import '../../../../common/loading_page.dart';
 import './pages.dart';
 
 class LoginPage extends ConsumerStatefulWidget {

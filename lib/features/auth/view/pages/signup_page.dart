@@ -5,11 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fzregex/utils/pattern.dart';
 import 'package:twitter_clone/common/common.dart';
 import 'package:twitter_clone/features/auth/controller/auth_controller.dart';
-import 'package:twitter_clone/features/auth/view/pages/pages.dart';
 import 'package:twitter_clone/features/auth/view/widgets/widgets.dart';
 import 'package:twitter_clone/theme/theme.dart';
 
-import '../../../../common/loading_page.dart';
 
 class SignUpPage extends ConsumerStatefulWidget {
   const SignUpPage({super.key});
