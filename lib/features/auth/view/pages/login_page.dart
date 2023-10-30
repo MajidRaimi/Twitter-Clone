@@ -40,12 +40,10 @@ class _LoginPageState extends State<LoginPage> {
             ),
             child: Column(
               children: [
-                // ! Email Text Field
                 AuthField(
                   controller: _emailController,
                   hintText: 'Email',
                 ),
-                // ! Password Text Felid
                 SizedBox(
                   height: 18.h,
                 ),
@@ -54,7 +52,6 @@ class _LoginPageState extends State<LoginPage> {
                   isPassword: true,
                   hintText: 'Password',
                 ),
-                // ! Sign up Button
                 SizedBox(
                   height: 32.h,
                 ),

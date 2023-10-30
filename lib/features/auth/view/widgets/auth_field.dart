@@ -19,9 +19,14 @@ class AuthField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       obscureText: isPassword,
+      style: const TextStyle(
+        color: Palette.whiteColor,
+        fontSize: 18,
+      ),
       decoration: InputDecoration(
+        hintText: hintText,
         hintStyle: const TextStyle(
-          fontSize: 18
+          fontSize: 18,
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.r),
@@ -38,7 +43,6 @@ class AuthField extends StatelessWidget {
           ),
         ),
         contentPadding: const EdgeInsets.all(22),
-        hintText: hintText,
       ),
     );
   }
