@@ -14,6 +14,10 @@ import '../../../../common/loading_page.dart';
 class SignUpPage extends ConsumerStatefulWidget {
   const SignUpPage({super.key});
 
+  static route() => MaterialPageRoute(
+        builder: (context) => const SignUpPage(),
+      );
+
   @override
   ConsumerState<SignUpPage> createState() => _SignUpPageState();
 }
@@ -46,74 +50,75 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
 
     return Scaffold(
       appBar: const CustomAppBar(),
-      body: isLoading ? const Loader() : Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 18.w,
-            ),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  AuthField(
-                    controller: _emailController,
-                    hintText: 'Email',
-                    regex: FzPattern.email.toString(),
-                    errorMessage: 'please enter a valid email',
+      body: isLoading
+          ? const Loader()
+          : Center(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 18.w,
                   ),
-                  SizedBox(
-                    height: 18.h,
-                  ),
-                  AuthField(
-                    controller: _passwordController,
-                    isPassword: true,
-                    hintText: 'Password',
-                  ),
-                  SizedBox(
-                    height: 32.h,
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: RoundedCustomButton(
-                      onTap: onSignUp,
-                      label: 'Sign Up',
-                      isLoading: ref.read(authControllerProvider),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 32.h,
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: 'Already have an account? ',
-                      style: TextStyle(
-                        color: Palette.whiteColor,
-                        fontSize: 12.sp,
-                      ),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
                       children: [
-                        TextSpan(
-                          text: 'Login',
-                          style: TextStyle(
-                            color: Palette.blueColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12.sp,
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () => Navigator.push(
-                                  context,
-                                  LoginPage.route(),
-                                ),
+                        AuthField(
+                          controller: _emailController,
+                          hintText: 'Email',
+                          regex: FzPattern.email.toString(),
+                          errorMessage: 'please enter a valid email',
                         ),
+                        SizedBox(
+                          height: 18.h,
+                        ),
+                        AuthField(
+                          controller: _passwordController,
+                          isPassword: true,
+                          hintText: 'Password',
+                        ),
+                        SizedBox(
+                          height: 32.h,
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: RoundedCustomButton(
+                            onTap: onSignUp,
+                            label: 'Sign Up',
+                            isLoading: ref.read(authControllerProvider),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 32.h,
+                        ),
+                        RichText(
+                          text: TextSpan(
+                            text: 'Already have an account? ',
+                            style: TextStyle(
+                              color: Palette.whiteColor,
+                              fontSize: 12.sp,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: 'Login',
+                                style: TextStyle(
+                                  color: Palette.blueColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12.sp,
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () => Navigator.pop(
+                                        context,
+                                      ),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
-                  )
-                ],
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-      ),
     );
   }
 }

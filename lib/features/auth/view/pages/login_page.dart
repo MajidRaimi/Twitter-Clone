@@ -9,6 +9,7 @@ import 'package:twitter_clone/features/auth/view/widgets/widgets.dart';
 import 'package:twitter_clone/theme/theme.dart';
 
 import '../../../../common/loading_page.dart';
+import './pages.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
   static route() => MaterialPageRoute(
@@ -105,8 +106,9 @@ class _SignUpPageState extends ConsumerState<LoginPage> {
                                   fontSize: 12.sp,
                                 ),
                                 recognizer: TapGestureRecognizer()
-                                  ..onTap = () => Navigator.pop(
+                                  ..onTap = () => Navigator.push(
                                         context,
+                                        SignUpPage.route(),
                                       ),
                               ),
                             ],

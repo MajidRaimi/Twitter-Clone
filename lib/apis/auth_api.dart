@@ -26,6 +26,8 @@ abstract class IAuthAPI {
     required String email,
     required String password,
   });
+
+  Future<User?> currentUserAccount();
 }
 
 class AuthAPI implements IAuthAPI {
@@ -40,11 +42,10 @@ class AuthAPI implements IAuthAPI {
   }) async {
     try {
       final account = await _account.create(
-        userId: ID.unique(),
-        email: email,
-        password: password,
-        name: email.split('@')[0]
-      );
+          userId: ID.unique(),
+          email: email,
+          password: password,
+          name: email.split('@')[0]);
       return right(account);
     } on AppwriteException catch (e, st) {
       return left(
@@ -80,5 +81,18 @@ class AuthAPI implements IAuthAPI {
     } catch (e, st) {
       return left(Failure(e.toString(), st.toString()));
     }
+  }
+
+  @override
+  Future<User?> currentUserAccount() async {
+    try {
+      return await _account.get();
+    } catch (_) {
+      return null;
+    }
+  }
+
+  FutureVoid logout() async {
+    await _account.deleteSession(sessionId: 'current');
   }
 }
