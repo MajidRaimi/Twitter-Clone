@@ -18,6 +18,7 @@ class MainApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         return MaterialApp(
+          title: 'Twitter Clone',
           theme: AppTheme.theme,
           debugShowCheckedModeBanner: false,
           home: Consumer(
