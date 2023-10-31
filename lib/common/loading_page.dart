@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/theme/pallete.dart';
+import 'package:twitter_clone/theme/palette.dart';
 
 class Loader extends StatelessWidget {
   const Loader({super.key});

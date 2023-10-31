@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:twitter_clone/constants/svgs_constants.dart';
-import 'package:twitter_clone/theme/pallete.dart';
+import 'package:twitter_clone/theme/palette.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -15,6 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.transparent,
       title: SvgPicture.asset(
         SvgConstants.twitterLogo,
         // ignore: deprecated_member_use
