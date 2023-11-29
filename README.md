@@ -1,5 +1,6 @@
-<img src='https://images.wondershare.com/repairit/aticle/2021/08/twitter-header-photo-issues-1.jpg'/>
-
+<center>
+  <img src='https://images.wondershare.com/repairit/aticle/2021/08/twitter-header-photo-issues-1.jpg'/>
+</center>
 <br/>
 
 # Flutter Twitter Clone 🐦
